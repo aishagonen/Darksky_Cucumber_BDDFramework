@@ -44,18 +44,12 @@ public class TodayPage {
             int expectedLowValue = arrayList.get(0);
             System.out.println("Lowest temperature is: " + arrayList.get(0));
             int actualLowValue = Integer.parseInt((ElementUtil.webAction(minTempActual)).getText().replaceAll("\\D+", ""));
-
-            //Assert.assertTrue(elementUtil.isElementDisplayed(By.xpath("//span[@class='minTemp'][1]")));
-
+            
             int highIndex = arrayList.size()-1;
             System.out.println("Highest temperature is: " + arrayList.get(highIndex));
 
             int expectedHighValue = arrayList.get(arrayList.size()-1);
-            //int actualHighValue= Integer.parseInt(BasePage.get().findElement(By.className("high-temp-text")).getText().replaceAll("\\D+", ""));
             int actualHighValue= Integer.parseInt((ElementUtil.webAction(maxTempActual)).getText().replaceAll("\\D+", ""));
-
-//            softAssert.assertEquals(actualHighValue, expectedHighValue, "Not verified!");
-//            softAssert.assertEquals(actualLowValue, expectedLowValue, "Not verified!");
 
             softAssert.assertEquals(actualHighValue, expectedHighValue, "Not verified!");
             softAssert.assertEquals(actualLowValue, expectedLowValue, "Not verified!");
