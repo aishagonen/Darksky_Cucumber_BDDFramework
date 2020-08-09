@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BasePage {
 
-    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
+    public static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
     public BasePage(){
     }
     public static WebDriver get(){

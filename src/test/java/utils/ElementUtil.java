@@ -1,5 +1,4 @@
-package runnerTest.webPages;
-
+package utils;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -7,18 +6,22 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
-import utils.BasePage;
+import org.testng.Assert;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.function.Function;
 
+
 public class ElementUtil {
 
-    WebDriver driver;
+
 
     /**
      * Fluentwait method which is used for elements
@@ -68,6 +71,8 @@ public class ElementUtil {
     public String getTextFromElement(By locator){
         return webAction(locator).getText();
     }
+
+
     /**
      * clear method
      * @param locator
@@ -106,6 +111,7 @@ public class ElementUtil {
      * @return
      */
     public List<WebElement> webElements(By locator){
+
         return BasePage.get().findElements(locator);
     }
     /**
@@ -137,6 +143,14 @@ public class ElementUtil {
         JavascriptExecutor js = (JavascriptExecutor) BasePage.get();
         js.executeScript("argument[0].scrollIntoView;", scrollElement);
     }
+
+    public static void clickElementByJS(By locator) {
+        WebElement element = webAction(locator);
+        JavascriptExecutor js = (JavascriptExecutor) BasePage.get();
+        js.executeScript("arguments[0].click();", element);
+    }
+
+
     /**
      * ScrollDown method using pixel
      * @param xPixel
@@ -178,11 +192,11 @@ public class ElementUtil {
 
 
     public void compareValues(By displayedLocator, By actualLocator, String value) throws InterruptedException {
-        Thread.sleep(3000);
-        String displayed = driver.findElement(displayedLocator).getText();
-        Thread.sleep(3000);
-        String actual = driver.findElement(actualLocator).getText();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
+        String displayed =  BasePage.get().findElement(displayedLocator).getText();
+        Thread.sleep(5000);
+        String actual =  BasePage.get().findElement(actualLocator).getText();
+        Thread.sleep(5000);
         if ((displayed.compareTo(actual))==0) {
             System.out.println(value + " is verified : " + displayed);
         } else {
@@ -190,4 +204,50 @@ public class ElementUtil {
         }
 
     }
+
+
+    public void getVerifyLowest(By listLocator, By lowestLocator ) {
+
+        WebElement element = webAction(listLocator);
+        JavascriptExecutor js = (JavascriptExecutor) BasePage.get();
+
+        //ArrayList<WebElement> list = new ArrayList(BasePage.get().findElements(listLocator));
+        List<WebElement> list = BasePage.get().findElements(listLocator);
+        //List<WebElement> list = new ArrayList(webElements(listLocator));
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+
+        for (int i = 0; i < list.size(); i++) {
+            arrayList.add(Integer.parseInt(list.get(i).getText().replaceAll("\\D+", "")));
+        }
+        Collections.sort(arrayList);
+        System.out.println(arrayList);
+        System.out.println(arrayList.get(0));
+
+        int expectedValue = arrayList.get(0);
+
+        int actualValue= Integer.parseInt(BasePage.get().findElement(lowestLocator).getText().replaceAll("\\D+", ""));
+
+        Assert.assertEquals(actualValue, expectedValue);
+    }
+
+    public void getVerifyHighest(By listLocator, By highestLocator ) {
+
+        List<WebElement> list = BasePage.get().findElements(listLocator);
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+
+        for (int i = 0; i < list.size(); i++) {
+            arrayList.add(Integer.parseInt(list.get(i).getText().replaceAll("\\D+", "")));
+        }
+        Collections.sort(arrayList);
+        System.out.println(arrayList);
+        int highIndex = arrayList.size()-1;
+        System.out.println(arrayList.get(highIndex));
+
+        int expectedValue = arrayList.get(highIndex);
+        int actualValue= Integer.parseInt(BasePage.get().findElement(highestLocator).getText().replaceAll("\\D+", ""));
+
+        Assert.assertEquals(actualValue, expectedValue);
+    }
+
+
 }

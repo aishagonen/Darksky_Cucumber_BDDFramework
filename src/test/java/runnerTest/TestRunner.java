@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         dryRun = false,
         //Path to your feature file
-        features = {"src/test/resources/features"},
+        features = {"src/test/resources/features/steps"},
         // Specify tags to be executed
         tags = {"@today"},
         //Specify step definition package name (Note: make sure to have this package on current directory)

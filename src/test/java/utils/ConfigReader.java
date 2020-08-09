@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    private static Properties configFile;
+    public static Properties configFile;
 
     static {
         try{

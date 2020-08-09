@@ -1,9 +1,9 @@
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("TodayPage.feature");
 formatter.feature({
-  "line": 3,
-  "name": "Verify Temperature of Today Feature",
+  "line": 2,
+  "name": "Verify temperature of today",
   "description": "",
-  "id": "verify-temperature-of-today-feature",
+  "id": "verify-temperature-of-today",
   "keyword": "Feature",
   "tags": [
     {
@@ -13,75 +13,64 @@ formatter.feature({
   ]
 });
 formatter.before({
-  "duration": 7573718768,
+  "duration": 8097823169,
   "status": "passed"
 });
 formatter.background({
-  "line": 5,
+  "line": 4,
   "name": "",
   "description": "",
   "type": "background",
   "keyword": "Background"
 });
 formatter.step({
-  "line": 6,
-  "name": "I am on Darksky home page",
+  "line": 5,
+  "name": "I am on home page",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "TodayPageSD.iAmOnDarkskyHomePage()"
+  "location": "TodayPageSD.iAmOnHomePage()"
 });
 formatter.result({
-  "duration": 1028077372,
+  "duration": 684038079,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 9,
-  "name": "Verify today\u0027s lowest and highest temperature",
+  "line": 7,
+  "name": "Verify lowest temperature for today",
   "description": "",
-  "id": "verify-temperature-of-today-feature;verify-today\u0027s-lowest-and-highest-temperature",
+  "id": "verify-temperature-of-today;verify-lowest-temperature-for-today",
   "type": "scenario",
   "keyword": "Scenario"
 });
 formatter.step({
-  "line": 10,
-  "name": "I click on today button field on home screen",
+  "line": 8,
+  "name": "I click on today button on the home page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 11,
-  "name": "I get lowest temperature, verify displayed temperature and enter value on home screen",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I get highest temperature, verify displayed temperature and enter value on home screen",
+  "line": 9,
+  "name": "I verify lowest and highest temperature for today",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "TodayPageSD.iClickOnTodayButtonFieldOnHomeScreen()"
+  "location": "TodayPageSD.iClickOnOnTheHomePage()"
 });
 formatter.result({
-  "duration": 5113629478,
+  "duration": 87388248,
   "status": "passed"
 });
 formatter.match({
-  "location": "TodayPageSD.iGetLowestTemperatureVerifyDisplayedTemperatureAndEnterValueOnHomeScreen()"
+  "location": "TodayPageSD.iVerifyLowestAndHighestTemperatureForToday()"
 });
 formatter.result({
-  "duration": 3002358856,
-  "error_message": "java.lang.NullPointerException\n\tat runnerTest.webPages.ElementUtil.compareValues(ElementUtil.java:182)\n\tat runnerTest.webPages.TodayPage.verifyLowTemp(TodayPage.java:24)\n\tat stepDefinition.TodayPageSD.iGetLowestTemperatureVerifyDisplayedTemperatureAndEnterValueOnHomeScreen(TodayPageSD.java:25)\n\tat ✽.And I get lowest temperature, verify displayed temperature and enter value on home screen(TodayPage.feature:11)\n",
+  "duration": 673603127,
+  "error_message": "java.lang.AssertionError: The following asserts failed:\n\tNot verified! expected [87] but found [86],\n\tNot verified! expected [77] but found [72]\n\tat org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)\n\tat runnerTest.webPages.TodayPage.verifyLowHighTemp(TodayPage.java:63)\n\tat stepDefinition.TodayPageSD.iVerifyLowestAndHighestTemperatureForToday(TodayPageSD.java:24)\n\tat ✽.Then I verify lowest and highest temperature for today(TodayPage.feature:9)\n",
   "status": "failed"
-});
-formatter.match({
-  "location": "TodayPageSD.iGetHighestTemperatureVerifyDisplayedTemperatureAndEnterValueOnHomeScreen()"
-});
-formatter.result({
-  "status": "skipped"
 });
 formatter.embedding("image/png", "embedded0.png");
 formatter.after({
-  "duration": 1443415747,
+  "duration": 2044499392,
   "status": "passed"
 });
 });
