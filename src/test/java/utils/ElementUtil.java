@@ -150,6 +150,17 @@ public class ElementUtil {
         js.executeScript("arguments[0].click();", element);
     }
 
+    public static void sendKeysUsingJSWithID( By locator, String id, String value){
+        WebElement element = webAction(locator);
+        JavascriptExecutor js = (JavascriptExecutor) BasePage.get();
+        js.executeScript("document.getElementById('" + id + "').value='"+value+"'");
+    }
+
+    public static void sendKeysUsingJSWithName(By locator, String name, String value){
+        WebElement element = webAction(locator);
+        JavascriptExecutor js = (JavascriptExecutor) BasePage.get();
+        js.executeScript("document.getElementsByName('" + name + "')[0].value='"+value+"'");
+    }
 
     /**
      * ScrollDown method using pixel

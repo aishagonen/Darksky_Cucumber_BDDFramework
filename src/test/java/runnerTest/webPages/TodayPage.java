@@ -44,7 +44,7 @@ public class TodayPage {
             int expectedLowValue = arrayList.get(0);
             System.out.println("Lowest temperature is: " + arrayList.get(0));
             int actualLowValue = Integer.parseInt((ElementUtil.webAction(minTempActual)).getText().replaceAll("\\D+", ""));
-            
+
             int highIndex = arrayList.size()-1;
             System.out.println("Highest temperature is: " + arrayList.get(highIndex));
 

@@ -8,12 +8,12 @@ formatter.feature({
   "tags": [
     {
       "line": 1,
-      "name": "@today"
+      "name": "@todayPage"
     }
   ]
 });
 formatter.before({
-  "duration": 8097823169,
+  "duration": 11071749767,
   "status": "passed"
 });
 formatter.background({
@@ -32,24 +32,30 @@ formatter.match({
   "location": "TodayPageSD.iAmOnHomePage()"
 });
 formatter.result({
-  "duration": 684038079,
+  "duration": 872679633,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 7,
+  "line": 8,
   "name": "Verify lowest temperature for today",
   "description": "",
   "id": "verify-temperature-of-today;verify-lowest-temperature-for-today",
   "type": "scenario",
-  "keyword": "Scenario"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "line": 7,
+      "name": "@today"
+    }
+  ]
 });
 formatter.step({
-  "line": 8,
+  "line": 9,
   "name": "I click on today button on the home page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 9,
+  "line": 10,
   "name": "I verify lowest and highest temperature for today",
   "keyword": "Then "
 });
@@ -57,20 +63,20 @@ formatter.match({
   "location": "TodayPageSD.iClickOnOnTheHomePage()"
 });
 formatter.result({
-  "duration": 87388248,
+  "duration": 174726884,
   "status": "passed"
 });
 formatter.match({
   "location": "TodayPageSD.iVerifyLowestAndHighestTemperatureForToday()"
 });
 formatter.result({
-  "duration": 673603127,
-  "error_message": "java.lang.AssertionError: The following asserts failed:\n\tNot verified! expected [87] but found [86],\n\tNot verified! expected [77] but found [72]\n\tat org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)\n\tat runnerTest.webPages.TodayPage.verifyLowHighTemp(TodayPage.java:63)\n\tat stepDefinition.TodayPageSD.iVerifyLowestAndHighestTemperatureForToday(TodayPageSD.java:24)\n\tat ✽.Then I verify lowest and highest temperature for today(TodayPage.feature:9)\n",
+  "duration": 1110222902,
+  "error_message": "java.lang.AssertionError: The following asserts failed:\n\tNot verified! expected [88] but found [89],\n\tNot verified! expected [76] but found [75]\n\tat org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)\n\tat runnerTest.webPages.TodayPage.verifyLowHighTemp(TodayPage.java:57)\n\tat stepDefinition.TodayPageSD.iVerifyLowestAndHighestTemperatureForToday(TodayPageSD.java:24)\n\tat ✽.Then I verify lowest and highest temperature for today(TodayPage.feature:10)\n",
   "status": "failed"
 });
 formatter.embedding("image/png", "embedded0.png");
 formatter.after({
-  "duration": 2044499392,
+  "duration": 2594804177,
   "status": "passed"
 });
 });
