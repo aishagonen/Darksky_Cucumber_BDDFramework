@@ -43,13 +43,3 @@ public class RegisterPageSD {
 
 }
 
-
-//    @When("^I enter abc@gmail\\.com into email field on the login page$")
-//    public void iEnterAbcGmailComIntoEmailFieldOnTheLoginPage() { registerPage.enterEmail("email"); }
-//
-//    @When("^I enter password1 into password field on the login page$")
-//    public void iEnterPassword1IntoPasswordFieldOnTheLoginPage() {
-//        registerPage.enterPassword("password");
-//    }
-
-

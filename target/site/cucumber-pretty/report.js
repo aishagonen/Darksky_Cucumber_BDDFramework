@@ -1,19 +1,19 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("TodayPage.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("HomePage.feature");
 formatter.feature({
   "line": 2,
-  "name": "Verify temperature of today",
+  "name": "Home page feature",
   "description": "",
-  "id": "verify-temperature-of-today",
+  "id": "home-page-feature",
   "keyword": "Feature",
   "tags": [
     {
       "line": 1,
-      "name": "@todayPage"
+      "name": "@homePage"
     }
   ]
 });
 formatter.before({
-  "duration": 11071749767,
+  "duration": 8642086091,
   "status": "passed"
 });
 formatter.background({
@@ -25,58 +25,74 @@ formatter.background({
 });
 formatter.step({
   "line": 5,
-  "name": "I am on home page",
+  "name": "I am on the Darksky home page",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "TodayPageSD.iAmOnHomePage()"
+  "location": "HomePageSD.iAmOnTheDarkskyHomePage()"
 });
 formatter.result({
-  "duration": 872679633,
+  "duration": 851715640,
   "status": "passed"
 });
 formatter.scenario({
   "line": 8,
-  "name": "Verify lowest temperature for today",
+  "name": "Verify timeline is displayed in correct format",
   "description": "",
-  "id": "verify-temperature-of-today;verify-lowest-temperature-for-today",
+  "id": "home-page-feature;verify-timeline-is-displayed-in-correct-format",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
       "line": 7,
-      "name": "@today"
+      "name": "@time"
     }
   ]
 });
 formatter.step({
   "line": 9,
-  "name": "I click on today button on the home page",
+  "name": "I enter \"Mason, OH\" into search text field on home screen",
   "keyword": "When "
 });
 formatter.step({
   "line": 10,
-  "name": "I verify lowest and highest temperature for today",
+  "name": "I verify city’s time zone",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "I verify timeline is displayed with two hours incremented",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "TodayPageSD.iClickOnOnTheHomePage()"
+  "arguments": [
+    {
+      "val": "Mason, OH",
+      "offset": 9
+    }
+  ],
+  "location": "HomePageSD.iEnterIntoSearchTextFieldOnHomeScreen(String)"
 });
 formatter.result({
-  "duration": 174726884,
+  "duration": 723399567,
   "status": "passed"
 });
 formatter.match({
-  "location": "TodayPageSD.iVerifyLowestAndHighestTemperatureForToday()"
+  "location": "HomePageSD.iVerifyCitySTimeZone()"
 });
 formatter.result({
-  "duration": 1110222902,
-  "error_message": "java.lang.AssertionError: The following asserts failed:\n\tNot verified! expected [88] but found [89],\n\tNot verified! expected [76] but found [75]\n\tat org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)\n\tat runnerTest.webPages.TodayPage.verifyLowHighTemp(TodayPage.java:57)\n\tat stepDefinition.TodayPageSD.iVerifyLowestAndHighestTemperatureForToday(TodayPageSD.java:24)\n\tat ✽.Then I verify lowest and highest temperature for today(TodayPage.feature:10)\n",
-  "status": "failed"
+  "duration": 9550588,
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded0.png");
+formatter.match({
+  "location": "HomePageSD.iVerifyTimelineIsDisplayedWithTwoHoursIncremented()"
+});
+formatter.result({
+  "duration": 4071514122,
+  "status": "passed"
+});
 formatter.after({
-  "duration": 2594804177,
+  "duration": 246510336,
   "status": "passed"
 });
 });

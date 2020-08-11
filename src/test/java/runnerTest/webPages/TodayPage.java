@@ -25,7 +25,6 @@ public class TodayPage {
     public By maxTempActual = By.className("high-temp-text");
                      //By.xpath("//span[@class='maxTemp'][1]");
 
-    //By currentLoc = By.xpath("//a[@class='currentLocationButton']//img");
 
 
     public void clickToday() {

@@ -11,8 +11,9 @@ import org.junit.runner.RunWith;
         monochrome = true,
         dryRun = false,
         features = {"src/test/resources/features/steps"},
-        tags = {"@today"},
+        //tags = {"@today"},
         //tags = {"@login"},
+        tags = {"@homePage"},
         glue = {"stepDefinition"}
 )
 public class TestRunner {
